@@ -1,0 +1,21 @@
+% !TEX root = Main.tex
+\section{Generative Models}
+Deep Probabilistic Models: $x^{l+1} = F^l(x^l) + W^l z^l$, $z^{l}\sim \mathcal{N}(0,1)$. Allows for easy sampling from complex distributions.
+\subsection{Autoencoders (AE)}
+Learn low dim. representation. 
+Linear: $min \frac{1}{2k} \sum_{i}^n ||x_i - DCx_i||^2$, C encoder, D decoder. Frobenius norm optimal solution from SVD(X): $C^*=U_d^T, D*=U_d$, $U$
+Non-linear: Use feedforward NN for encoding and decoding $F = H \circ G$. \\
+Denoising: Perturb input $x := x + \eta$
+\subsection{Variational AE}
+Get gen. AE by constraining distribution of latent vars to follow a given distrib.
+\begin{inparaenum}[\color{red}1.]
+	\item Condition on y, compute $q(z|y)$
+	\item sample $z^l \sim q(z^l|y)$
+	\item forward $2^l$
+	\item backpropagate for generated example.
+\end{inparaenum}
+Max ELBO $E_q[log p(x^{1:L},y;\theta) - log q(x^1:L;y)] \leq log p (y;\theta)$ \\
+Autoregressive Model: Gen. output 1 var at a time. 
+Pixel CNN: $p(x) = \prod_i^{n^2} p(x_i|x_1,...,x_{i-1})$. \\
+Autoregr. process of order p: $x_t = \sum_{i=1}^p \phi_i x_{t-p} + \delta_t$.
+Solve for $\phi^*$ by MLE: $p(x, \phi) = p(x_1)\prod_{i=2}^n p(x_i|x_{i-1},...,x_1,\phi)$ or via least sq. solution of the problem $\phi^* = (X^TX)^{-1}X^Ty$
