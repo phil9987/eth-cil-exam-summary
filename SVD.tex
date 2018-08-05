@@ -15,13 +15,14 @@ $(\mathbf{D}^{-1})_{i,i} = \frac{1}{\mathbf{D}_{i, i}}$ (don't forget to transpo
 \end{inparaenum}
 
 Nb nonzero singular vals = rank(A). First r cols of U basis of C(A), last n - r cols of V basis of N(A). 
-$\lambda_i = \sigma_i^2$ follows from $SVD(A^TA)$
+$\lambda_i = \sigma_i^2$ for square symmetric matrix A.
+SVD construction: $v_i = arg max_w ||Bw|| = \sigma_i $, s.t. $||w|| = 1$, $u_i = \frac{1}{\sigma_i} B_i v_i$. $B_0 = A, B_{i+1} = B_i - \sigma_i u_i v_i^T$
 
 
 \subsection*{Low-Rank approximation}
 Using only $K$ largest eigenvalues and corresponding eigenvectors. $\tilde{\mathbf{A}}_{i, j} = \sum_{k=1}^K \mathbf{U}_{i, k} \mathbf{D}_{k,k} \mathbf{V}_{j, k} = \sum_{k=1}^K \mathbf{U}_{i, k} \mathbf{D}_{k,k} (\mathbf{V}^\top)_{k, j}$.
 
-\subsection*{Echart-Young Theorem}
+\subsection*{Eckart-Young Theorem}
 $\min_{rank(B)=K} ||A-B||_F^2 = ||A-A_k||_F^2 = \sum_{r=k+1}^{rank(A)} \sigma_r^2$
 $\min_{rank(B)=K} ||A-B||_2 = ||A-A_k||_2 = \sigma_{k+1}$
 

@@ -11,10 +11,11 @@ Get gen. AE by constraining distribution of latent vars to follow a given distri
 \begin{inparaenum}[\color{red}1.]
 	\item Condition on y, compute $q(z|y)$
 	\item sample $z^l \sim q(z^l|y)$
-	\item forward $2^l$
+	\item forward $z^l$
 	\item backpropagate for generated example.
 \end{inparaenum}
-Max ELBO $E_q[log p(x^{1:L},y;\theta) - log q(x^1:L;y)] \leq log p (y;\theta)$ \\
+Max ELBO $E_q[log p(x^{1:L},y;\theta) - log q(x^{1:L};y)] \leq log p (y;\theta)$ \\ 
+Or: $log p_\theta(x^{i}) \geq E_z[log p_\theta(x^{i}|z)] - D_{KL}(q_\theta(z|x^{i}||p_\theta(z)))$
 Autoregressive Model: Gen. output 1 var at a time. 
 Pixel CNN: $p(x) = \prod_i^{n^2} p(x_i|x_1,...,x_{i-1})$. \\
 Autoregr. process of order p: $x_t = \sum_{i=1}^p \phi_i x_{t-p} + \delta_t$.

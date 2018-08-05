@@ -40,5 +40,5 @@ K-means is special case of GMM with covariances $\Sigma_j = \sigma^2 * I$. in th
 Trade-off btw data fit (i.e. likelihood $p(\mathbf{X} | \theta)$) and complexity (i.e. \# of free parameters $\kappa(\cdot)$). For choosing $K$:\\
 $\operatorname{AIC}(\theta | \mathbf{X}) = -\log p_\theta(\mathbf{X}) + \kappa(\theta)$\\
 $\operatorname{BIC}(\theta | \mathbf{X}) = -\log p_\theta(\mathbf{X}) + \frac{1}{2} \kappa(\theta) \log N$\\
-\# of free params, fixed covariance matrix: $\kappa(\theta) = K \cdot D + (K - 1)$ ($K$: \# clusters, $D$: $\mathsf{dim}\text{(data)}=\mathsf{dim}(\mu_i)$, $K-1$: \# free clusters, full cov. matrix: $\kappa(\theta) = K(D + \frac{D(D+1)}{2}) + (K - 1)$.\\
+\# of free params, fixed covariance matrix: $\kappa(\theta) = K \cdot D + (K - 1)$ ($K$: \# clusters, $D$: $\mathsf{dim}\text{(data)}=\mathsf{dim}(\mu_i)$, $K-1$: \# free clusters), full cov. matrix: $\kappa(\theta) = K(D + \frac{D(D+1)}{2}) + (K - 1)$.\\
 Comp. AIC/BIC for different $K$: find smallest. BIC penalizes complexity more.
