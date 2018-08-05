@@ -7,7 +7,7 @@ $p_\theta(w|w')$ = Pr[$w$ occurs in context of $w'$]\\
 $L(\theta; \mathbf{w}) = \sum_{t=1}^T\sum_{\Delta \in I}{\log p_\theta(w^{(t+\Delta)}|w^{(t)})}$\\
 \textbf{Latent Vector Model:} $w \rightarrow (\mathbf{x}_w, b_w) \in \mathbb{R}^{D+1} \\p_{\theta}(w|w') = \frac{\exp[\langle \mathbf{x}_w,\mathbf{x}_{w'}\rangle + b_w]}{\sum_{v\in V}{\exp[\langle \mathbf{x}_v,\mathbf{x}_{w'}\rangle + b_v ]}}$ (soft-max).\\
 \textbf{Modifications:}\\
-$\log p_{\theta}(w|w') = \langle  y_{w} , x_{w'} \rangle + b_w$,  word $y_w$, c'txt $x_{w'}$\\
+$\log p_{\theta}(w|w') = \langle  x_{w} , y_{w'} \rangle + b_w$,  word $x_w$, c'txt $y_{w'}$\\
 use GloVe objective\\
 negative sampling (logistic classification)
 
