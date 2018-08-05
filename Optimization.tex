@@ -44,8 +44,7 @@ $\mathbf{x}^{(t+1)}$ is unique if $Q$ convex.
 \subsection*{Lagrangian Multipliers}
 Minimize  $f(\mathbf{x})$ s.t. $g_i(\mathbf{x}) \leq 0,\ i = 1, .., m$ (\textbf{inequality constr.}) and $h_i(\mathbf{x}) = \mathbf{a}_i^\top \mathbf{x} - b_i = 0,\ i = 1, .., p$ (\textbf{equality constraint}). 
 \textbf{Lagrangian:} $L(\mathbf{x}, \boldsymbol{\lambda}, \boldsymbol{\nu}) := f(\mathbf{x}) + \sum_{i=1}^m \lambda_i g_i(\mathbf{x}) + \sum_{i=1}^p \nu_i h_i(\mathbf{x})$\\
-\textbf{Dual function:} $D(\boldsymbol{\lambda}, \boldsymbol{\nu}) := \inf_{\mathbf{x}} L(\mathbf{x}, \boldsymbol{\lambda}, \boldsymbol{\nu}) \in \mathbb{R}$\\
-\textbf{Dual Problem:} $\max_{\boldsymbol{\lambda}, \boldsymbol{\nu}} D(\boldsymbol{\lambda}, \boldsymbol{\nu})$ s.t. $\boldsymbol{\lambda} \geq \mathbf{0}$. Note: $\max_{\boldsymbol{\lambda}, \boldsymbol{\nu}} D(\boldsymbol{\lambda}, \boldsymbol{\nu}) \le \min_\mathbf{x}{f(\mathbf{x})}$, equality if $dom\ f$ and $f$ convex
+
 
 \subsection*{Convex Optimization}
 Def.: $\{(x,t)|x \in dom f, f(x) \leq t\}$, $f : \mathbb{R}^D \rightarrow \mathbb{R}$ is convex, if $dom\ f$ is a convex set, and if $\forall \mathbf{x}, \mathbf{y} \in dom\ f$, and for $0 \leq \alpha \leq 1$: $f(\alpha \mathbf{x} + (1 - \alpha)\mathbf{y}) \leq \alpha f(\mathbf{x}) + (1-\alpha)f(\mathbf{y})$. local=global min, \textbf{Convergence}: $f(\mathbf{x}^{(t)}) - f(\mathbf{x}^*) \le \frac{c}{t}$.
